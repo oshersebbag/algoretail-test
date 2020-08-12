@@ -23,6 +23,8 @@ class App extends React.Component {
   calculateCellValue(rowData) {
     const orders=rowData.orders;
     let sum=0;
+    let index= this.state.myShows.indexOf(rowData);
+    let arr=this.state.myShows;
     if(orders){
       orders.forEach((purchase)=>{
         if(purchase["number-of-tickets"]=="")
@@ -30,17 +32,21 @@ class App extends React.Component {
           sum+=0;
         }
         else {
-  
         sum+=parseInt(purchase["number-of-tickets"]);
         }
       } );
       const remaining=rowData["total-tickets"] - sum;
-      let index= this.state.myShows.indexOf(rowData);
-
+      arr[index]["remaining-tickets"]=remaining;
+      this.setState({ myShows: arr });
       return remaining;
     }
     else {
-      return rowData["total-tickets"];
+      if(arr[index]){
+        arr[index]["remaining-tickets"]=arr[index]["total-tickets"];
+        this.setState({ myShows: arr });
+        return rowData["total-tickets"];
+      }
+      else {return "";}
     }
 }
 
@@ -65,7 +71,7 @@ handleValueChange(e) {
         showRowLines={showRowLines}
         showBorders={showBorders}
         rowAlternationEnabled={rowAlternationEnabled}
-        onRowInserting={this.handleValueChange}
+        onInitNewRow={this.handleValueChange}
       >
         <Column  width={70} caption="" dataType="string" calculateCellValue={this.numberList}></Column>
         <Column dataField="title" caption="Show Title" dataType="string"> <RequiredRule /></Column>
@@ -91,7 +97,6 @@ handleValueChange(e) {
 
 
 function Orders(props) {
-  console.log(props.data);
   let myOrders = props.data.key.orders;
   if(!myOrders){
     myOrders= props.data.key.orders=[ {
@@ -108,19 +113,17 @@ function Orders(props) {
         showColumnLines={true}
         showRowLines={true}
         showBorders={true}
-
       >
-      <Column dataField="name"  caption="name" dataType="string"></Column>
+      <Column dataField="name"  caption="name" dataType="string"><RequiredRule /></Column>
       <Column dataField="number-of-tickets"  caption="amount of tickets" dataType="number">
       <RangeRule message="not enough tickets. sorry!" max={props.data.key["remaining-tickets"]} />
       <RangeRule message="You must order at least 1 ticket" min={1} />
-
+      <RequiredRule />
       </Column>
       <Editing
             mode="cell"
             allowAdding={true}
             allowDeleting={true}
-            allowUpdating={true}
           />
 
       <Summary>
