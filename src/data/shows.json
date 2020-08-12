@@ -1,67 +1,203 @@
 {
-    "shows":[
+  "shows": [
+    {
+      "title": "U2",
+      "total-tickets": 100,
+      "remaining-tickets": 0,
+      "orders": [
         {
-            "title":"shlomo artzi",
-            "total-tickets":"250",
-            "remaining-tickets": "",
-            "orders":[ {
-                "name":"osher",
-                "number-of-tickets":"2"
-            }]
+          "name": "Yossi",
+          "number-of-tickets": 2
+        }
+      ]
     },
     {
-        "title":"U2",
-        "total-tickets":"2500",
-        "remaining-tickets": "",
-        "orders":[ {
-            "name":"",
-            "number-of-tickets":""
-        }]
+      "title": "Madonna",
+      "total-tickets": 250,
+      "remaining-tickets": 0,
+      "orders": [
+        {
+          "name": "Osher",
+          "number-of-tickets": 2
+        },
+        {
+          "name": "Alon",
+          "number-of-tickets": 25
+        }
+      ]
     },
     {
-        "title":"madonna",
-        "total-tickets":"250",
-        "remaining-tickets": "",
-        "orders": [{
-            "name":"",
-            "number-of-tickets":""
-        }]
+      "title": "Fiona Apple",
+      "total-tickets": 300,
+      "remaining-tickets": 0,
+      "orders": [
+        {
+          "name": "Shuki",
+          "number-of-tickets": 50
+        },
+        {
+          "name": "Barak",
+          "number-of-tickets": 22
+        }
+      ]
     },
     {
-        "title":"Bon Jovi",
-        "total-tickets":"250",
-        "remaining-tickets": "",
-        "orders": [{
-            "name":"",
-            "number-of-tickets":""
-        }]
+      "title": "P!nk",
+      "total-tickets": 1000,
+      "remaining-tickets": 0,
+      "orders": [
+        {
+          "name": "Yael",
+          "number-of-tickets": 4
+        },
+        {
+          "name": "Alina",
+          "number-of-tickets": 78
+        }
+      ]
     },
     {
-        "title":"Bjork",
-        "total-tickets":"250",
-        "remaining-tickets": "2",
-        "orders": [{
-            "name":"",
-            "number-of-tickets":""
-        }]
+      "title": "Omer Adam",
+      "total-tickets": 25000,
+      "remaining-tickets": 0,
+      "orders": [
+        {
+          "name": "Bank Hapolim",
+          "number-of-tickets": 20000
+        },
+        {
+          "name": "Yona",
+          "number-of-tickets": 13
+        }
+      ]
     },
     {
-        "title":"fiona apple",
-        "total-tickets":"250",
-        "remaining-tickets": "",
-        "orders": [{
-            "name":"",
-            "number-of-tickets":""
-        }]
-    },        
+      "title": "Rita",
+      "total-tickets": 4000,
+      "remaining-tickets": 0,
+      "orders": [
+        {
+          "name": "Lora",
+          "number-of-tickets": 1
+        },
+        {
+          "name": "Nitay",
+          "number-of-tickets": 4
+        }
+      ]
+    },
     {
-        "title":"Tori Amos",
-        "total-tickets":"250",
-        "remaining-tickets": "",
-        "orders": [{
-            "name":"",
-            "number-of-tickets":""
-        }]
+      "title": "Duncan Laurence",
+      "total-tickets": 250,
+      "remaining-tickets": 0,
+      "orders": [
+        {
+          "name": "Gil",
+          "number-of-tickets": 2
+        },
+        {
+          "name": "Hen",
+          "number-of-tickets": 4
+        }
+      ]
+    },
+    {
+      "title": "Luca Hanni",
+      "total-tickets": 400,
+      "remaining-tickets": 0,
+      "orders": [
+        {
+          "name": "Yotam",
+          "number-of-tickets": 4
+        },
+        {
+          "name": "Alona",
+          "number-of-tickets": 3
+        }
+      ]
+    },
+    {
+      "title": "Mergui",
+      "total-tickets": 300,
+      "remaining-tickets": 0,
+      "orders": [
+        {
+          "name": "Or",
+          "number-of-tickets": 1
+        },
+        {
+          "name": "Ruti",
+          "number-of-tickets": 20
+        }
+      ]
+    },
+    {
+      "title": "Charlotte Perrelli",
+      "total-tickets": 100,
+      "remaining-tickets": 0,
+      "orders": [
+        {
+          "name": "Maor",
+          "number-of-tickets": 6
+        },
+        {
+          "name": "Nahum",
+          "number-of-tickets": 3
+        }
+      ]
+    },
+    {
+      "title": "The Weekend",
+      "total-tickets": 15000,
+      "remaining-tickets": 0,
+      "orders": [
+        {
+          "name": "Mifa'l Hapais",
+          "number-of-tickets": 6000
+        },
+        {
+          "name": "Dikla",
+          "number-of-tickets": 15
+        }
+      ]
+    },
+    {
+      "title": "Miri Mesika",
+      "total-tickets": 500,
+      "remaining-tickets": 0,
+      "orders": [
+        {
+          "name": "Yehuda",
+          "number-of-tickets": 2
+        },
+        {
+          "name": "Ortal",
+          "number-of-tickets": 6
+        }
+      ]
+    },
+    {
+      "title": "Queen",
+      "total-tickets": 50000,
+      "remaining-tickets": 0,
+      "orders": [
+        {
+          "name": "Osher",
+          "number-of-tickets": 20
+        },
+        {
+          "name": "Alon",
+          "number-of-tickets": 25
+        },
+        {
+          "name": "IDF - HEVER",
+          "number-of-tickets": 20000
+        },
+        {
+          "name": "Hot",
+          "number-of-tickets": 20000
+        }
+      ]
     }
-    ]
+  ]
 }
