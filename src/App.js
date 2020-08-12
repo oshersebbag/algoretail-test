@@ -10,17 +10,12 @@ class App extends React.Component {
     super(props);
     this.state = {
       myShows: shows.shows,
-      showColumnLines: false,
-      showRowLines: false,
-      showBorders: false,
-      rowAlternationEnabled: true
     };
-    this.handleValueChange = this.handleValueChange.bind(this);
     this.numberList = this.numberList.bind(this);
-    this.calculateCellValue =this.calculateCellValue.bind(this);
+    this.ramainingTickets =this.ramainingTickets.bind(this);
   }
 
-  calculateCellValue(rowData) {
+  ramainingTickets(rowData) {
     const orders=rowData.orders;
     let sum=0;
     let index= this.state.myShows.indexOf(rowData);
@@ -55,41 +50,33 @@ numberList(rowData){
   return index+1;
 }
 
-handleValueChange(e) {
-  console.log(e);
-}
 
 
-  render(){
-    const { showColumnLines, showRowLines, showBorders, rowAlternationEnabled } = this.state;
+render(){
     return (
     <div className="App">
       
       <DataGrid
         dataSource={this.state.myShows}
-        showColumnLines={showColumnLines}
-        showRowLines={showRowLines}
-        showBorders={showBorders}
-        rowAlternationEnabled={rowAlternationEnabled}
-        onInitNewRow={this.handleValueChange}
+        showColumnLines={false}
+        showRowLines={false}
+        showBorders={false}
+        rowAlternationEnabled={true}
       >
         <Column  width={70} caption="" dataType="string" calculateCellValue={this.numberList}></Column>
         <Column dataField="title" caption="Show Title" dataType="string"> <RequiredRule /></Column>
         <Column dataField="total-tickets" caption="Total Tickets Available" dataType="number" ><RequiredRule /></Column>
-        <Column dataField="remaining-tickets" caption="Remaining Tickets" dataType="number" calculateCellValue={this.calculateCellValue}
- >
-        </Column>
+        <Column dataField="remaining-tickets" caption="Remaining Tickets" dataType="number" calculateCellValue={this.ramainingTickets}></Column>
         <Editing
             mode="cell"
             allowAdding={true}
             allowDeleting={true}
-          />
-         <MasterDetail
+        />
+        <MasterDetail
           enabled={true}
           component={Orders}
         />
         </DataGrid>
-
     </div>
   );
 }
@@ -105,14 +92,17 @@ function Orders(props) {
   }];
   }
 
-  return (
+  function myfunction(e){
+  }
 
+  return (
     <div className="orders">
       <DataGrid
         dataSource={myOrders}
         showColumnLines={true}
         showRowLines={true}
         showBorders={true}
+        onRowInserting={myfunction}
       >
       <Column dataField="name"  caption="name" dataType="string"><RequiredRule /></Column>
       <Column dataField="number-of-tickets"  caption="amount of tickets" dataType="number">
@@ -125,7 +115,6 @@ function Orders(props) {
             allowAdding={true}
             allowDeleting={true}
           />
-
       <Summary>
             <TotalItem
               column="number-of-tickets"
@@ -134,10 +123,8 @@ function Orders(props) {
               displayFormat={'Total: {0}'}
               showInGroupFooter={true}
               />
-
        </Summary>
       </DataGrid>
-
     </div>
   );
 }
